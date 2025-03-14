@@ -1,0 +1,18 @@
+def collect_user_data():
+    user_data = {}
+    user_data["name"] = input("Enter your name: ")
+    user_data["age"] = input("Enter your age: ")
+    user_data["email"] = input("Enter your email: ")
+    
+    # Validate email
+    while "@" not in user_data["email"] or "." not in user_data["email"]:
+        print("Invalid email! Please enter a valid email.")
+        user_data["email"] = input("Enter your email again: ")
+    
+    user_data["favorite_number"] = input("Enter your favorite number: ")
+
+    # Display formatted output
+    print(f"\nUser Information:\nName: {user_data['name']}\nAge: {user_data['age']}\nEmail: {user_data['email']}\nFavorite Number: {user_data['favorite_number']}")
+
+# Call the function
+collect_user_data()
