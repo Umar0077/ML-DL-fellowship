@@ -1,0 +1,21 @@
+def update_inventory(inventory_dict, item, quantity):
+    if item in inventory_dict:
+        inventory_dict[item] = max(0, inventory_dict[item] + quantity)
+    else:
+        print(f"{item} not found in inventory!")
+
+    return inventory_dict
+
+# Initialize inventory
+inventory = {"Apples": 10, "Bananas": 20, "Oranges": 15, "Mangoes": 8, "Grapes": 12}
+
+# Update 3 items
+for _ in range(3):
+    item_name = input("\nEnter item to update: ")
+    change = int(input("Enter quantity change (+ to add, - to remove): "))
+    inventory = update_inventory(inventory, item_name, change)
+
+# Display updated inventory
+print("\nUpdated Inventory:")
+for item, qty in inventory.items():
+    print(f"{item}: {qty}")
