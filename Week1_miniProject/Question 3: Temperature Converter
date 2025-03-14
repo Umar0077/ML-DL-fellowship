@@ -1,0 +1,16 @@
+def convert_temperature(temp, scale):
+    if scale.upper() == "C":
+        return (temp * 9/5) + 32  # Celsius to Fahrenheit
+    elif scale.upper() == "F":
+        return (temp - 32) * 5/9  # Fahrenheit to Celsius
+    else:
+        return None
+
+temperature = float(input("\nEnter the temperature: "))
+scale = input("Convert to (C/F): ")
+
+converted = convert_temperature(temperature, scale)
+if converted is not None:
+    print(f"Converted Temperature: {converted:.2f}°{scale.upper()}")
+else:
+    print("Invalid scale! Please enter C or F.")
