@@ -1,0 +1,14 @@
+students = []
+
+for i in range(3):
+    name = input(f"\nEnter Student {i+1} Name: ")
+    age = int(input(f"Enter {name}'s Age: "))
+    grade = input(f"Enter {name}'s Grade: ")
+    students.append((name, age, grade))
+
+# Convert list to dictionary
+students_dict = {student[0]: (student[1], student[2]) for student in students}
+
+print("\nStudent Data:")
+for name, details in students_dict.items():
+    print(f"Name: {name}, Age: {details[0]}, Grade: {details[1]}")
