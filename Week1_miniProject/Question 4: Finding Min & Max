@@ -1,0 +1,10 @@
+def find_max_min(numbers_list):
+    return max(numbers_list), min(numbers_list)
+
+numbers = []
+for i in range(5):
+    num = int(input(f"Enter number {i+1}: "))
+    numbers.append(num)
+
+maximum, minimum = find_max_min(numbers)
+print(f"\nMaximum: {maximum}, Minimum: {minimum}")
